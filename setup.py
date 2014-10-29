@@ -24,9 +24,9 @@ README = read('README.rst')
 CHANGELOG = read('CHANGES.txt')
 
 setup(
-    name="PyHawk",
-    version="0.1.3",
-    url='https://github.com/mozilla/PyHawk',
+    name="PyHawk-with-a-single-extra-commit",
+    version="0.1.4",
+    url='https://github.com/jhford/PyHawk',
     author='Austin King',
     author_email='ozten@mozilla.com',
     description="Python libraries for the 'HAWK' HTTP authentication scheme",
