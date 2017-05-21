@@ -32,7 +32,7 @@ def main():
     res = requests.get(url, data=params, headers=headers)
 
     if (200 != res.status_code):
-        print 'Authorized request (FAILED) status=' + str(res.status_code) + ' body=' + res.text
+        print('Authorized request (FAILED) status=' + str(res.status_code) + ' body=' + res.text)
 
     response = {
         'headers': res.headers
@@ -40,9 +40,9 @@ def main():
 
     if hawk_authenticate(response, credentials, header['artifacts'],
                            { 'payload': res.text }):
-        print "Response validates (OK)"
+        print("Response validates (OK)")
     else:
-        print "Response validates (FAIL) " + res.text
+        print("Response validates (FAIL) " + res.text)
 
     # print "Generating bewit url"
     # print url + '&bewit=' + client.get_bewit(url, {'credentials': credentials,

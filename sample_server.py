@@ -60,14 +60,14 @@ def main():
         server = hawk.Server(req, lambda cid: credentials[cid])
 
         if url.find('bewit=') == -1:
-            print "HAWK based authentication"
+            print("HAWK based authentication")
             return hawk_authentication(start_response, server)
         else:
-            print "Bewit based authentication"
+            print("Bewit based authentication")
             return hawk_bewit_authentication(start_response, server)
 
     httpd = make_server('', 8002, simple_app)
-    print "Serving on port 8002..."
+    print("Serving on port 8002...")
     httpd.serve_forever()
 
 def hawk_authentication(start_response, server):
@@ -104,11 +104,11 @@ def hawk_bewit_authentication(start_response, server):
             start_response(status, headers)
             return payload
         else:
-            print "Bad Bewit, sending 401"
+            print("Bad Bewit, sending 401")
             start_response('401 Unauthorized', [])
             return 'Please authenticate'
     except (HawkException):
-        print "Exception, sending 401"
+        print("Exception, sending 401")
         start_response('401 Unauthorized', [])
         return 'Please authenticate'
 
