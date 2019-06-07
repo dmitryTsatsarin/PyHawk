@@ -85,7 +85,7 @@ def calculate_payload_hash(payload, algorithm, content_type):
     """Calculates a hash for a given payload."""
     p_hash = hashlib.new(algorithm)    
     p_hash.update(('hawk.' + str(HAWK_VER) + '.payload\n').encode('utf-8'))
-    p_hash.update(parse_content_type(content_type) + '\n')
+    p_hash.update((parse_content_type(content_type) + '\n').encode('utf-8'))
     if payload:
         p_hash.update(payload)
     else:
