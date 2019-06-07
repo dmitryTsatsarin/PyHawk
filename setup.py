@@ -24,7 +24,7 @@ README = read('README.rst')
 CHANGELOG = read('CHANGES.txt')
 
 setup(
-    name="PyHawk-bla-bla-bla",
+    name="PyHawk-tsd",
     version="0.1.4",
     url='https://github.com/jhford/PyHawk',
     author='Austin King',
