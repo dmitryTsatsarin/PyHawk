@@ -87,10 +87,10 @@ def calculate_payload_hash(payload, algorithm, content_type):
     p_hash.update(('hawk.' + str(HAWK_VER) + '.payload\n').encode('utf-8'))
     p_hash.update((parse_content_type(content_type) + '\n').encode('utf-8'))
     if payload:
-        p_hash.update(payload)
+        p_hash.update(payload.encode('utf-8'))
     else:
         p_hash.update('')
-    p_hash.update('\n')
+    p_hash.update('\n'.encode('utf-8'))
     return b64encode(p_hash.digest())
 
 
